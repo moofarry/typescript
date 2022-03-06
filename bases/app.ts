@@ -1,44 +1,28 @@
-(() => {
 
-  // Tipos
-  const batman:string = 'Bruce';
-  const superman:string = 'Clark';
+// basic function
+const addNumber = (a:number, b:number):number =>   a + b; 
 
-  const existe:boolean = false;
+const count = (heros:string[]):number =>   heros.length; 
 
-  // Tuples
-  const parejaHeroes:[string,string] = [batman,superman];
-  const villano:[string,number,boolean] = ['Lex Luto',5,true];
+const heros:string[] = ["Flash", "Arrow", "Superman", "Linterna Verde"];
+count(heros);
 
-  // Arreglos
-  const allies:string[] = ['Mujer Maravilla','Aqua-man','San', 'Flash'];
 
-  //Enumeraciones
-  enum Power {
-    fuerzaAquaman,
-    fuerzaBatman,
-    fuerzaFlash=5,
-    fuerzaSuperman=100,
+//default parameters
+const callBatman = ( call:boolean=true ):void => {
+  if( call ){
+    console.log("BatmanSignal");
   }
-  const fuerzaFlash:Power =  Power.fuerzaAquaman
-  const fuerzaSuperman:Power =  Power.fuerzaBatman
-  const fuerzaBatman:Power = Power.fuerzaFlash
-  const fuerzaAcuaman:Power =  Power.fuerzaSuperman
+}
 
-  // Retorno de funciones
-  function activar_batiseñal():string{
-    return 'activada';
-  }
+callBatman();
 
-  function pedir_ayuda():void{
-    console.log('Auxilio!!!');
-  }
+// Rest?
+const uniteHeroes = ( persons:string[] ) : string =>  ` ${persons.join(' ')}`
 
-  // Aserciones de Tipo
-  const poder: any = '100';
-  const largoDelPoder:number = (poder as string).length;
-  console.log( largoDelPoder );
+// type FUNCTION
+const nothingTodo = ( num:number, txt:string, bool:boolean, arr:string[] )=> {}
 
-
-})()
-
+// Crear el tipo de funcion que acepte la funcion "nothingTodo"
+let nothingTodoToo: (num:number, txt:string, bool:boolean, arr:string[]) => void;
+nothingTodoToo = nothingTodo
