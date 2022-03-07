@@ -33,3 +33,4 @@
     var largoDelPoder = poder.length;
     console.log(largoDelPoder);
 })();
+//# sourceMappingURL=app2.js.map

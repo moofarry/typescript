@@ -1,21 +1,43 @@
 "use strict";
-// basic function
-var addNumber = function (a, b) { return a + b; };
-var count = function (heros) { return heros.length; };
-var heros = ["Flash", "Arrow", "Superman", "Linterna Verde"];
-count(heros);
-//default parameters
-var callBatman = function (call) {
-    if (call === void 0) { call = true; }
-    if (call) {
-        console.log("BatmanSignal");
+// Objetos
+var batimovil = {
+    carroceria: "Negra",
+    modelo: "6x6",
+    antibalas: true,
+    pasajeros: 4
+};
+var bumblebee = {
+    carroceria: "Amarillo con negro",
+    modelo: "4x2",
+    antibalas: true,
+    pasajeros: 4,
+    disparar: function () {
+        console.log("Disparando");
     }
 };
-callBatman();
-// Rest?
-var uniteHeroes = function (persons) { return " ".concat(persons.join(' ')); };
-// type FUNCTION
-var nothingTodo = function (num, txt, bool, arr) { };
-// Crear el tipo de funcion que acepte la funcion "nothingTodo"
-var nothingTodoToo;
-nothingTodoToo = nothingTodo;
+var villanos = [{
+        nombre: "Lex Luthor",
+        edad: 54,
+        mutante: false
+    }, {
+        nombre: "Erik Magnus Lehnsherr",
+        edad: 49,
+        mutante: true
+    }, {
+        nombre: "James Logan",
+        edad: undefined,
+        mutante: true
+    }];
+var charles = {
+    poder: "psiquico",
+    estatura: 1.78
+};
+var apocalipsis = {
+    lider: true,
+    miembros: ["Magneto", "Tormenta", "Psylocke", "Angel"]
+};
+// Mystique, debe poder ser cualquiera de esos dos mutantes (charles o apocalipsis)
+var mystique;
+mystique = charles;
+mystique = apocalipsis;
+//# sourceMappingURL=app.js.map

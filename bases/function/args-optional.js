@@ -4,3 +4,4 @@
     var name = fullName('Bruce');
     console.log({ name: name });
 })();
+//# sourceMappingURL=args-optional.js.map

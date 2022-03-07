@@ -6,3 +6,4 @@
     console.log(batman, superman, flash);
     console.log("".concat(batman.toUpperCase(), " ").concat(superman.toUpperCase(), " ").concat(flash));
 })();
+//# sourceMappingURL=strings.js.map

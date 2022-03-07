@@ -7,3 +7,4 @@
     avenger = 50.235232;
     console.log(avenger.toFixed(2));
 })();
+//# sourceMappingURL=any.js.map

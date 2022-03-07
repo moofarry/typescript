@@ -9,3 +9,4 @@
     console.log(a);
     callSuperman();
 })();
+//# sourceMappingURL=void.js.map

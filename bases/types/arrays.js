@@ -4,3 +4,4 @@
     var heros = ["iron-man", "thor", "hulk", "spiderman", "antman"];
     heros.forEach(function (v) { return console.log(v); });
 })();
+//# sourceMappingURL=arrays.js.map

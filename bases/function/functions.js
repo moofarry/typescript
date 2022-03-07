@@ -6,3 +6,4 @@
     console.log(typeof activateBatmanSignal);
     var heroName = returnName();
 })();
+//# sourceMappingURL=functions.js.map
