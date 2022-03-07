@@ -1,14 +1,14 @@
 "use strict";
 (function () {
     var myCustomVariable = 'Fernando';
-    console.log(typeof myCustomVariable); // string
+    console.log(typeof myCustomVariable);
     myCustomVariable = 20;
-    console.log(typeof myCustomVariable); // number
+    console.log(typeof myCustomVariable);
     myCustomVariable = {
         name: 'Bruce',
         age: 34,
         powers: ['Fli']
     };
-    console.log(typeof myCustomVariable); // object
+    console.log(typeof myCustomVariable);
 })();
 //# sourceMappingURL=union-type.js.map
