@@ -7,9 +7,8 @@ define(["require", "exports", "axios"], function (require, exports, axios_1) {
     exports.getPokemon = void 0;
     axios_1 = __importDefault(axios_1);
     const getPokemon = async (pokemonId) => {
-        const response = await axios_1.default.get(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`);
-        console.log(response);
-        return 1;
+        const { data } = await axios_1.default.get(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`);
+        return data;
     };
     exports.getPokemon = getPokemon;
 });

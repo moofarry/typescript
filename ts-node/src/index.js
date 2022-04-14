@@ -1,8 +1,8 @@
-define(["require", "exports", "./generics/get-pokemon"], function (require, exports, get_pokemon_1) {
+define(["require", "exports", "./decorators/pokemon-class"], function (require, exports, pokemon_class_1) {
     "use strict";
     Object.defineProperty(exports, "__esModule", { value: true });
-    (0, get_pokemon_1.getPokemon)(2)
-        .then(result => console.log(result))
-        .catch(err => console.log(err))
-        .finally(() => console.log('Fin de get'));
+    const charmander = new pokemon_class_1.Pokemon('Charmander');
+    // console.log(charmander);
+    // (Pokemon.prototype as any).customName('Pikachu')
+    charmander.savePokemonToDb(299);
 });
