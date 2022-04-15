@@ -21,9 +21,41 @@ define(["require", "exports"], function (require, exports) {
         Object.seal(constructor);
         Object.seal(constructor.prototype);
     };
+    //factory decorator
+    function validPokemonID() {
+        return function name(target, propertyKey, descriptor) {
+            const originalMethod = descriptor.value;
+            descriptor.value = (id) => {
+                if (id < 1 || id > 200) {
+                    return console.error("the id between 1 and 200");
+                }
+                else {
+                    return originalMethod(id);
+                }
+            };
+            // descriptor.value= () => console.log("Hello world");
+        };
+    }
+    function readOnly(isWritable = true) {
+        return function (target, propertyKey) {
+            const descriptor = {
+                get() {
+                    console.log(this);
+                    return 'Jhon';
+                },
+                set(value) {
+                    //console.log(this,value);
+                    Object.defineProperty(this, propertyKey, {
+                        value: value,
+                        writable: !isWritable,
+                        enumerable: false,
+                    });
+                }
+            };
+        };
+    }
     let Pokemon = 
     // executed before creating the class
-    //@printToConsole
     class Pokemon {
         constructor(name) {
             this.name = name;
@@ -33,11 +65,13 @@ define(["require", "exports"], function (require, exports) {
             console.log(`Pokemon into db ${id}`);
         }
     };
+    __decorate([
+        validPokemonID()
+    ], Pokemon.prototype, "savePokemonToDb", null);
     Pokemon = __decorate([
         blockPrototype,
         printToConsoleConditional(true)
         // executed before creating the class
-        //@printToConsole
     ], Pokemon);
     exports.Pokemon = Pokemon;
 });

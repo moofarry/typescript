@@ -1,5 +1,5 @@
 function printToConsole(constructor: Function) {
-  console.log(constructor);
+  //console.log(constructor);
 }
 
 const printToConsoleConditional = (print: boolean = false) => {
@@ -14,6 +14,7 @@ const blockPrototype = function (constructor: Function) {
   Object.seal(constructor.prototype);
 };
 
+//factory decorator
 function validPokemonID() {
   return function name(
     target: any,
@@ -33,10 +34,32 @@ function validPokemonID() {
   };
 }
 
+function readonly(isWritable: boolean = true): Function {
+  return function (target: any, propertyKey: string) {
+    const descriptor: PropertyDescriptor = {
+      get() {
+        console.log(this);
+        return "Fernando";
+      },
+      set(this, val) {
+        // console.log(this, val )
+        Object.defineProperty(this, propertyKey, {
+          value: val,
+          writable: !isWritable,
+          enumerable: false,
+        });
+      },
+    };
+
+    return descriptor;
+  };
+}
+
 @blockPrototype
 @printToConsoleConditional(true)
 // executed before creating the class
 export class Pokemon {
+  @readonly(true)
   public publicApi: string = "https://pokeapi.co";
   constructor(public name: string) {}
 
